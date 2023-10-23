@@ -155,6 +155,13 @@ hr {
 .active-section {
   display: none;
 }
+.checked{
+  color: #555;
+  text-decoration: line-through;
+}
+.checked::before{
+  background-image: url("images/icon-check.svg");
+}
 @media screen and (max-width: 500px) {
   .desktop-container {
     background-image: none;
