@@ -11,41 +11,55 @@
     <section class="desktop-container">
       <div class="todo-section">
         <p class="todo">TODO</p>
-        <a href="index.html"><img class="icon-moon" src="images/icon-sun.svg" alt="" /></a>
+        <a href="index.html"
+          ><img class="icon-moon" src="images/icon-sun.svg" alt=""
+        /></a>
       </div>
       <div class="search">
         <svg
-            class="textbox"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <circle cx="12" cy="12" r="11.5" stroke="#393A4B" />
-            <g opacity="0.01">
-              <circle cx="12" cy="12" r="12" fill="url(#paint0_linear_0_310)" />
-              <path d="M8 12.3041L10.6959 15L16.6959 9" stroke="white" />
-            </g>
-            <defs>
-              <linearGradient
-                id="paint0_linear_0_310"
-                x1="-12"
-                y1="12"
-                x2="12"
-                y2="36"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#55DDFF" />
-                <stop offset="1" stop-color="#C058F3" />
-              </linearGradient>
-            </defs>
-          </svg>
-          <!-- <p class="search-text">Create a new todo...</p> -->
-        <input type="text" name="text" class="textbox1" placeholder="Create a new todo..." id="textbox" />
+          class="textbox"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <circle cx="12" cy="12" r="11.5" stroke="#393A4B" />
+          <g opacity="0.01">
+            <circle cx="12" cy="12" r="12" fill="url(#paint0_linear_0_310)" />
+            <path d="M8 12.3041L10.6959 15L16.6959 9" stroke="white" />
+          </g>
+          <defs>
+            <linearGradient
+              id="paint0_linear_0_310"
+              x1="-12"
+              y1="12"
+              x2="12"
+              y2="36"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#55DDFF" />
+              <stop offset="1" stop-color="#C058F3" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <input
+          type="text"
+          name="text"
+          class="textbox1"
+          placeholder="Create a new todo..."
+          id="textbox"
+        />
       </div>
       <div class="taskcontainer">
-        <div class="radiobtn1 firsttast checked">
+        <ul id="list_container" class="texttask">
+          <!-- <li class=" firsttast checked" >
+            Task 1</li> <hr>
+          <li>Task 2</li><hr>
+          <li>Task 3</li> -->
+        </ul>
+        <!--<div class="radiobtn1 firsttast checked">
           <svg
             class="check"
             xmlns="http://www.w3.org/2000/svg"
@@ -166,9 +180,6 @@
               </linearGradient>
             </defs>
           </svg>
-          <!-- <img src="images/Group 4.png" alt=""> -->
-          <!-- <input type="radio" class="check" id="check" /> -->
-          <!-- <label for="" class="texttask">Read for 1 hour</label> -->
           <p class="texttask p1">Read for 1 hour</p>
         </div>
         <hr />
@@ -232,7 +243,7 @@
             </defs>
           </svg>
           <p class="texttask p1">Now a frontend developer</p>
-        </div>
+        </div> -->
         <hr />
         <div class="footer-text">
           <p class="count">5 items left</p>
@@ -251,5 +262,6 @@
         <p class="drop">Drag ad Drop to reorder list</p>
       </div>
     </section>
+    <script src="script.js"></script>
   </body>
 </html>

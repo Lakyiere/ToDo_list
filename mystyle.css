@@ -69,11 +69,44 @@
   margin-left: 24em;
   margin-top: 1.7rem;
 }
+ul li{
+  list-style: none;
+  position: relative;
+  color: #c8cbe7;
+  font-family: Josefin Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.25px;
+  margin-left: 1.5rem;
+  padding: 0.5rem 0 0.5rem 0;
+}
+ul li .checked{
+  color: #555;
+  text-decoration: line-through;
+}
+/* Style the close button */
+.close {
+  margin-left: 10rem;
+  color: rgba(91, 94, 126, 1);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Style the close button on hover */
+.close:hover {
+  color: #b30000;
+  text-decoration: none;
+}
+.checked::before{
+  background-image: url("images/icon-check.svg");
+}
 .firsttast {
   padding-top: 0.7rem;
 }
 .check {
-  margin-left: 2.3rem;
+  margin-left: 0.3rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   width: 22px;
@@ -155,13 +188,7 @@ hr {
 .active-section {
   display: none;
 }
-.checked{
-  color: #555;
-  text-decoration: line-through;
-}
-.checked::before{
-  background-image: url("images/icon-check.svg");
-}
+
 @media screen and (max-width: 500px) {
   .desktop-container {
     background-image: none;
