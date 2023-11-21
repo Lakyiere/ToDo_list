@@ -4,9 +4,9 @@ This is a repo of a ToDo List page with Javascript.
 
 # Functionalities
 
-The app sovles the followig tho still under development
+The app solves the following problems, tho still under development
 
-• See hover states for all interactive elements on the page
+• Hover states for all interactive elements on the page
 
 • Add new to-dos to the list
 
