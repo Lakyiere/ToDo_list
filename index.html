@@ -1,73 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
 
-    <title>ToDo List</title>
-  </head>
-  <body>
-    <section class="desktop-container">
-      <div class="todo-section">
-        <p class="todo">TODO</p>
-        <a href="dark.html"><img class="icon-moon" src="images/icon-moon.svg" alt="" /></a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="mystyle.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+
+  <title>ToDo List </title>
+</head>
+
+<body data-theme="light">
+  <section class="desktop-container">
+
+
+    <!-- TODO SECTION WITH toggle icon and heading text  -->
+    <div class="todo-section">
+      <p class="todo">TODO</p>
+
+      <!--  dark and light mood icon  -->
+      <div class="theme-switcher">
+        <button id="theme-button" class="IconButton">
+          <img class="icon-sun switcher" src="images/icon-sun.svg" alt="sunIcon" />
+          <img class="icon-moon switcher" src="images/icon-moon.svg" alt="moonIcon" />
+        </button>
       </div>
+    </div>
+
+
+
+    </div>
+
+    <div class="form-container">
+
       <div class="search">
-        <input type="radio" name="text" class="textbox" id="textbox" />
-        <!-- <input type="text" name="text" class="textbox1" id="textbox" /> -->
-        <label class="search-text" for="">Create a new todo...</label>
+        <svg class="textbox" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="11.5" stroke="#393A4B" />
+          <g opacity="0.01">
+            <circle cx="12" cy="12" r="12" fill="url(#paint0_linear_0_310)" />
+            <path d="M8 12.3041L10.6959 15L16.6959 9" stroke="white" />
+          </g>
+          <defs>
+            <linearGradient id="paint0_linear_0_310" x1="-12" y1="12" x2="12" y2="36" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#55DDFF" />
+              <stop offset="1" stop-color="#C058F3" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <input type="text" name="text" class="textbox1" placeholder="Create a new todo..." id="textbox" />
       </div>
+
       <div class="taskcontainer">
-        <div class="radiobtn firsttast">
-          <input type="radio" class="check" />
-          <label for="" class="texttask"
-            >Complete Online JavaScript Course</label
-          >
-        </div>
-        <hr />
-        <div class="radiobtn checked" >
-          <input type="radio" class="check" />
-          <label for="" class="texttask">Jog around the park 3x</label>
-        </div>
-        <hr />
-        <div class="radiobtn">
-          <input type="radio" class="check" id="check" />
-          <label for="" class="texttask">10 minutes meditation</label>
-        </div>
-        <hr />
-        <div class="radiobtn">
-          <input type="radio" class="check" id="check" />
-          <label for="" class="texttask">Read for 1 hour</label>
-        </div>
-        <hr />
-        <div class="radiobtn">
-          <input type="radio" class="check" id="check" />
-          <label for="" class="texttask">Write in your writeup book</label>
-        </div>
-        <hr />
-        <div class="radiobtn">
-          <input type="radio" class="check" id="check" />
-          <label for="" class="texttask">Now a frontend developer</label>
-        </div>
-        <hr />
+        <ul id="list_container" class="texttask">
+          <!-- Tasks will be added here -->
+        </ul>
+        <hr class="Line-under">
         <div class="footer-text">
-          <p class="count">5 items left</p>
-          <p class="all">All</p>
-          <p class="active">Active</p>
-          <p class="completed">Completed</p>
-          <p class="clear">Clear Completed</p>
+          <p class="count"> 0 items left </p>
+          <button class="all">All</button>
+          <button class="active">Active</button>
+          <button class="completed">Completed</button>
+          <button class="clear">Clear Completed</button>
         </div>
       </div>
-      <div class="active-section layer">
-        <p class="all-a">All</p>
-          <p class="active-a">Active</p>
-          <p class="completed-a">Completed</p>
-      </div>
-      <div class="endtext">
-        <p class="drop">Drag ad Drop to reorder list</p>
-      </div>
-      
-    </section>
-  </body>
+
+
+    </div>
+
+    <!--  the icon  -->
+
+
+    <!--  and drop -->
+    <div class="endtext">
+      <p class="drop">Drag ad Drop to reorder list</p>
+    </div>
+  </section>
+
+
+
+  <script src="script.js"></script>
+</body>
+
 </html>

@@ -1,17 +1,81 @@
-.desktop-container {
-  background-image: url("images/bg-desktop-dark.jpg");
-  background-repeat: no-repeat;
-  max-width: 100%;
-  background-color: #171823;
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
 }
+
+body {
+  color: var(--color-4);
+  background-color: var(--color-1);
+}
+
+/* using global colors  for  light mode   */
+body[data-theme="light"] {
+  --color-1: #fff;
+  --color-2: white;
+  --color-3: white;
+  --color-4: rgb(80, 82, 110);
+  --color-5: #000;
+  --lineColor: #000;
+}
+
+/* Global color for dark mode  */
+body[data-theme="dark"] {
+  --color-1: #171823;
+  --color-2: #020303;
+  --color-3: #25273d;
+  --color-4: rgb(186, 186, 202);
+  --color-5: #767992;
+  --lineColor: #ffff;
+}
+
+/*  Remove the background and border the icons  */
+.IconButton,
+.theme-switcher,
+.icon-sun,
+.icon-moon {
+  background-color: transparent;
+  border: none;
+}
+
+/*  icon on light  */
+.icon-moon {
+  display: none;
+}
+
+/*  icon on dark  */
+body[data-theme="dark"] .icon-moon {
+  display: inline;
+}
+
+/*  icon on light  */
+body[data-theme="dark"] .icon-sun {
+  display: none;
+}
+
+/*  the main container */
+.desktop-container {
+  background-image: url("images/bg-desktop-light.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; /* Add this line */
+  max-width: 100%;
+  background-color: var(--color-2);
+  height: 50vh;
+}
+
 .todo-section {
   display: flex;
   justify-content: space-evenly;
   padding-top: 3rem;
-  margin: 0%;
+  margin: 0 50 0;
 }
+/*  TO heading test */
 .todo {
   color: #fff;
+
   font-family: Josefin Sans;
   font-size: 40px;
   font-style: normal;
@@ -20,11 +84,17 @@
   letter-spacing: 15px;
   margin: 0%;
 }
-.icon-moon {
-  width: 25.113px;
-  height: 26px;
-  flex-shrink: 0;
+
+/*  For container to hold the to list and the to do task  */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20rem;
 }
+
+/*  Search bar to enter a list  */
 .search {
   display: flex;
   margin-left: 24em;
@@ -32,47 +102,60 @@
   width: 590px;
   height: 64px;
   border-radius: 5px;
-  background-color: #25273d;
+  background-color: var(--color-3);
+  color: var(--color-4);
   box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
 }
+
+/* Check box behind the search bar  */
 .textbox {
   margin-left: 2.3rem;
   margin-top: 1.2rem;
   width: 24px;
   height: 24px;
 }
+
+/*  text been entered in the search bar  */
 .textbox1 {
   flex: 1;
   margin-left: 1.5rem;
- outline: none;
+  outline: none;
   border: none;
   background: transparent;
-  color: #fff;
-}
-.search-text {
-  color: #767992;
-  font-family: Josefin Sans;
+  color: var(--color-4);
   font-size: 20px;
-  border: #fff;
+}
+
+/*   */
+.search-text {
+  color: var(--color-5);
+  font-family: Josefin Sans;
+  font-size: 40px;
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.25px;
   margin-top: 1.3rem;
   margin-left: 1.5rem;
 }
+
+/*  task container    this  contain the  the whole form    */
 .taskcontainer {
-  width: 590px;
-  height: 400px;
-  background: #25273d;
+  width: auto;
+  height: auto;
+  background-color: var(--color-3);
+  color: var(--color-4);
   box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   margin-left: 24em;
   margin-top: 1.7rem;
+  padding-right: 1rem;
+  padding-bottom: 20px;
 }
-ul li{
+
+ul li {
   list-style: none;
   position: relative;
-  color: #c8cbe7;
+  color: var(--color-4);
   font-family: Josefin Sans;
   font-size: 18px;
   font-style: normal;
@@ -81,27 +164,35 @@ ul li{
   letter-spacing: -0.25px;
   margin-left: 1.5rem;
   padding: 0.5rem 0 0.5rem 0;
+  font-size: 20px;
+  border-bottom: 1px solid #000;
 }
-ul li .checked{
+
+
+ul li.checked {
   color: #555;
   text-decoration: line-through;
 }
+
+
+
+
 /* Style the close button */
 .close {
-  margin-left: 10rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  right: 1.5rem;
   color: rgba(91, 94, 126, 1);
-  font-weight: bold;
   cursor: pointer;
+  font-size: 2rem;
 }
-
 /* Style the close button on hover */
 .close:hover {
   color: #b30000;
   text-decoration: none;
 }
-.checked::before{
-  background-image: url("images/icon-check.svg");
-}
+
 .firsttast {
   padding-top: 0.7rem;
 }
@@ -128,11 +219,7 @@ ul li .checked{
   letter-spacing: -0.25px;
   margin-left: 1.5rem;
 }
-hr {
-  background-color: #393a4b;
-  height: 1px;
-  border: none;
-}
+
 .footer-text {
   display: flex;
   color: #9495a5;
@@ -144,18 +231,52 @@ hr {
   letter-spacing: -0.194px;
   margin-left: 2.3rem;
 }
-.all {
+
+/*  Line-under */
+.Line-under {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #393a4b;
+}
+button.all {
   margin-left: 5.5rem;
   color: #3a7cfd;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 15px;
+  cursor: pointer;
 }
-.active {
+button.active {
   margin-left: 2rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--color-4);
+  font-size: 15px;
+  cursor: pointer;
 }
-.completed {
+button.completed {
   margin-left: 2rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--color-4);
+  font-size: 15px;
+  cursor: pointer;
 }
-.clear {
+button.clear {
   margin-left: 4rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--color-4);
+  font-size: 15px;
+  cursor: pointer;
 }
 .endtext {
   text-align: center;
@@ -172,11 +293,11 @@ hr {
   letter-spacing: -0.194px;
 }
 .active:hover {
-  color: #E3E4F1;
+  color: #e3e4f1;
   cursor: pointer;
 }
 .clear:hover {
-  color: #E3E4F1;
+  color: #e3e4f1;
   cursor: pointer;
 }
 .check:hover {
@@ -189,155 +310,119 @@ hr {
   display: none;
 }
 
-@media screen and (max-width: 500px) {
-  .desktop-container {
-    background-image: none;
-    background-color: rgba(0, 0, 0, 0);
-  }
-  body {
-    background-image: url("images/bg-mobile-dark.jpg");
-    background-repeat: no-repeat;
-    max-width: 100%;
-    background-color: #171823;
-  }
-  .todo-section {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 2.5rem;
-  }
-  .todo {
-    color: #fff;
-    font-family: Josefin Sans;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 15px;
-    margin-left: 1rem;
-  }
-  .icon-moon {
-    width: 20px;
-    height: 20px;
-    margin-right: 1.2rem;
-  }
-  .search {
-    margin-left: 1rem;
-    margin-top: 2rem;
-    width: 327px;
-    height: 48px;
-    border-radius: 5px;
-     background-color: #25273d;
-  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
-  }
-  .textbox {
-    margin-left: 2rem;
-    margin-top: 1rem;
-    width: 20px;
-    height: 20px;
-  }
-  /* .textbox1 {
-  margin-left: 4rem;
-  margin-top: 1.1rem;
-  border: none;
-} */
-  .search-text {
-    color: #9495a5;
-    font-family: Josefin Sans;
-    font-size: 12px;
-    border: #fff;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: -0.25px;
-     margin-top: 1.3rem;
-  margin-left: 1.5rem;
-  }
-  .taskcontainer {
-    width: 327px;
-    height: 368px;
-    box-shadow: 1px 1px 4px 2px lightgray;
-    border-radius: 5px;
-   background: #25273d;
-  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
-    margin-left: 1rem;
-    margin-top: 1.7rem;
-  }
-  /* .firsttast {
-  padding-top: 0.2rem;
-} */
-  .check {
-    margin-left: 2rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    width: 19px;
-    height: 19px;
-  }
-  .texttask {
-    color: #C8CBE7;
-    font-family: Josefin Sans;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: -0.167px;
-    margin-left: 1.5rem;
-  }
-  .footer-text {
-    display: flex;
-    justify-content: space-around;
-    color: #9495a5;
-    font-family: Josefin Sans;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: -0.194px;
-    margin-left: 0;
-  }
+/* The container */
+.checkbox-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+}
 
-  .all {
-    display: none;
-  }
-  .active {
-    display: none;
-  }
-  .completed {
-    display: none;
-  }
-  .clear {
-    text-align: right;
-  }
-  .endtext {
-    text-align: center;
-    padding: 1.5rem;
-  }
-  .active-section {
-    display: block;
-    margin-left: 1rem;
-    margin-top: 1rem;
-    width: 327px;
-    height: 48px;
-    border-radius: 5px;
-    background: #25273D;
-box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.50);
-  }
-  .layer {
-    display: flex;
-    color: #9495a5;
-    font-family: Josefin Sans;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -0.194px;
-  }
-  .all-a {
-    padding-left: 5rem;
-    color: #3a7cfd;
-  }
-  .active-a {
-    padding-left: 1.5rem;
-  }
-  .completed-a {
-    padding-left: 1.5rem;
-  }
+/* Hide the default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  border: 1px  #000  ; /* Specify border width and style */
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Add shadow */
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+ 
+  background: linear-gradient(
+    to right,
+    rgba(85, 221, 255, 1),
+    rgba(192, 88, 243, 1)
+  );
+  
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  background: linear-gradient(
+    to right,
+    rgba(85, 221, 255, 1),
+    rgba(192, 88, 243, 1)
+  );
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+@media screen and (max-width: 500px) {
+
+
+ 
+  /* Task container on small devices */
+.desktop-container {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* .taskcontainer {
+ 
+
+} */
+
+/* Close icon */
+.close {
+  margin-left: 20px; /* Adjust as needed */
+}
+
+.todo-section {
+  justify-content: space-evenly;
+  padding-top: 3rem;
+  margin: 0 50px; /* Added unit */
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 60px; /* Added unit */
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  border: 1px solid #000; /* Corrected border property */
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
 }
